@@ -38,7 +38,15 @@ services:
       - elk
     depends_on:
       - elasticsearch
-
+      
+  #Only for development purpose. 
+  redis:  
+    image: redis:alpine
+    ports:
+      - "6379"
+    networks:
+      - elk
+    
 networks:
 
   elk:
